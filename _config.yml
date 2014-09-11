@@ -1,5 +1,6 @@
 # Site settings
 title: /design
+baseurl: /design
 
 # Build settings
 markdown: kramdown
