@@ -1,0 +1,6 @@
+# Site settings
+title: /design
+
+# Build settings
+markdown: kramdown
+permalink: none
