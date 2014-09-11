@@ -19,7 +19,7 @@ body {
 	font-size: 1em;
 	line-height: 1.35;
 	font-family: Helvetica, sans-serif;
-  margin-top: 40px;
+  background-color: #e7e7e7;
   margin-bottom: 80px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -27,8 +27,6 @@ body {
 img {
 	width: 100%;
 	height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
 	border-radius: 3px;
   vertical-align: middle;
 }
@@ -38,11 +36,19 @@ img {
  */
 
 .container {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 650px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1140px;
   margin-right: auto;
   margin-left: auto;
+}
+.main-content {
+  padding-top: 80px;
+}
+.single-col {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*
@@ -72,6 +78,7 @@ h2 {
 }
 a {
 	color: #7E7E7E;
+  text-decoration: none;
 }
 ol li,
 ul li {
@@ -82,8 +89,9 @@ blockquote {
   border-left: none;
   font-size: .9rem;
   line-height: 1.35;
-  padding-left: .75rem;
-  padding-right: .75rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px;
 }
 hr {
 	border-top: 2px solid #E7E7E7;
@@ -98,7 +106,17 @@ hr {
  */
 
 .nav {
-  margin-bottom: 40px;
+  position: fixed;
+  background-color: rgba(255,255,255,.7);
+  padding-left: 20px;
+  width: 100%;
+  z-index: 2;
+  opacity: .6;
+  transition: .25s;
+}
+.nav:hover {
+  opacity: 1;
+  transition: .25s;
 }
 .nav a {
 	text-decoration: none;
@@ -109,13 +127,47 @@ hr {
 }
 .nav ul li {
 	margin-right: 20px;
+  margin-bottom: 0px;
 	display: inline-block;
+}
+
+/*
+ * Post List
+ */
+
+@media (min-width: 780px) {
+  .post-list {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 30px;
+       -moz-column-gap: 30px;
+            column-gap: 30px;
+  }
+  .post-list .post {
+    transition: .25s;
+    display: inline-block;
+  }
+  .post-list .post:hover {
+    opacity: .8;
+    transition: .25s;
+  }
 }
 
 /*
  * Post
  */
 
+article {
+  background-color: #FFF;
+  border-radius: 3px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.post-image {
+  margin-bottom: 1rem;
+}
 .post-footer {
   font-size: .8rem;
   color: #7E7E7E;

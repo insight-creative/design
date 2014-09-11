@@ -2,15 +2,18 @@
 layout: default
 ---
 
+<div class="single-col">
 	<article>
   	<h1>{{ page.title }}</h1>
   	<p>{{ page.date | date: "%b %-d, %Y" }}</p>
     {% if page.type == "image" %}
-    <img src="{{ site.baseurl }}/img/{{ page.image }}">
+    <img class="post-image" src="{{ site.baseurl }}/img/{{ page.image }}">
+    {{ content }}
     {% elsif page.type == "quote" %}
     <blockquote>
       <p>"{{ page.quote }}"</p>
       <p>{{ page.quoted }}</p>
+      {{ content }}
     </blockquote>
     {% else %}
  	 	{{ content }}
@@ -18,3 +21,4 @@ layout: default
     <hr>
     <p class="post-footer">Posted by {{ page.author }}.</p>
   </article>
+</div>
