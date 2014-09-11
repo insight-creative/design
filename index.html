@@ -6,7 +6,7 @@ layout: default
     {% if post.type == "quote" %}
     <blockquote>
       <p>"{{ post.quote }}"</p>
-      <p><a href="{{ site.basurl }}{{ post.url }}">{{ post.quoted }}</a></p>
+      <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.quoted }}</a></p>
     </blockquote>
     {% elsif post.type == "image" %}
     <a href="{{ site.baseurl }}{{ post.url }}"><img src="{{ site.baseurl }}/img/{{ post.image }}"></a>
